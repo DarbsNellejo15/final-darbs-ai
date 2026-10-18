@@ -1,0 +1,6 @@
+{
+  "name": "DARBS",
+  "description": "DARBS (Diagnostic Assistant for Repair, Bugs and Support) - Intelligent Laptop, PC, and Hardware Troubleshooting AI Assistant. Diagnoses Windows errors, BSOD crashes, performance bottlenecks, driver conflicts, network drops, and provides actionable repair guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
