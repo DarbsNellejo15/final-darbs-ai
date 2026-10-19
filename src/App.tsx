@@ -397,7 +397,7 @@ export default function App() {
             <div className="max-w-md space-y-4 rounded-3xl border border-slate-800 bg-[#0b1429] p-8 shadow-2xl">
               <div className="mx-auto relative flex h-16 w-16 items-center justify-center rounded-2xl overflow-hidden border border-cyan-400/40 bg-gradient-to-tr from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-500/20">
                 <img
-                  src="/src/assets/images/darbs_logo_1791717510434.jpg"
+                  src="/src/assets/images/img_Logo.png"
                   alt="DARBS Logo"
                   referrerPolicy="no-referrer"
                   className="h-full w-full object-cover"
@@ -446,7 +446,7 @@ export default function App() {
                 <div className="flex gap-4 p-4 md:px-6 bg-[#070e1b]">
                   <div className="relative flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden border border-cyan-400/40 bg-gradient-to-tr from-cyan-600 to-blue-600 text-white animate-pulse shadow-md shadow-cyan-500/20">
                     <img
-                      src="/src/assets/images/darbs_logo_1791717510434.jpg"
+                      src="/src/assets/images/img_Logo.png"
                       alt="DARBS Logo"
                       referrerPolicy="no-referrer"
                       className="h-full w-full object-cover"

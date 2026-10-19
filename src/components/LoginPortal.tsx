@@ -212,7 +212,7 @@ export const LoginPortal: React.FC<LoginPortalProps> = ({ onLogin }) => {
           <div className="text-center">
             <div className="mx-auto mb-4 relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-tr from-cyan-600 to-blue-600 text-white shadow-xl shadow-cyan-500/25 ring-2 ring-cyan-400/50 overflow-hidden">
               <img
-                src="/src/assets/images/darbs_logo_1791717510434.jpg"
+                src="/src/assets/images/img_Logo.png"
                 alt="DARBS Logo"
                 referrerPolicy="no-referrer"
                 className="h-full w-full object-cover"
