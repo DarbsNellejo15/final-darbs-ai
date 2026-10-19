@@ -21,6 +21,12 @@ View your app in AI Studio: https://ai.studio/apps/400fc1e0-bdbc-4625-a2db-bfe1a
 3. Run the app:
    `npm run dev`
 
+The development server uses port `3000` by default, or the port set in `PORT`.
+If that port is already in use, set `PORT` to a free port before starting the
+app (in PowerShell, for example: `$env:PORT=3001; npm run dev`). The server exits
+instead of silently switching ports, which could send API requests to a
+different process.
+
 The frontend chat and tools require the Node.js API server in `server.ts`. Deploy
 the app with a Node.js host that runs this server; a static-only host cannot serve
 the `/api/*` endpoints.

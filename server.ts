@@ -423,10 +423,10 @@ async function startServer() {
       console.log(`DARBS AI Server running on http://0.0.0.0:${port}`);
     }).on("error", (error: NodeJS.ErrnoException) => {
       if (error.code === "EADDRINUSE") {
-        const nextPort = port + 1;
-        console.warn(`Port ${port} is busy, retrying on ${nextPort}`);
-        startListening(nextPort);
-        return;
+        console.error(
+          `Port ${port} is already in use. Set PORT to a free port and restart so the frontend and API use the same port.`
+        );
+        process.exit(1);
       }
 
       console.error("Failed to start server:", error);
