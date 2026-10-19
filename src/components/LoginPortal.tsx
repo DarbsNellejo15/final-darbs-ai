@@ -22,31 +22,14 @@ interface StoredAccount {
   createdAt: string;
 }
 
-const DEFAULT_ACCOUNTS: StoredAccount[] = [
-  {
-    id: "tech-user-01",
-    name: "Hardware Technician",
-    email: "tech@darbs.io",
-    password: "password123",
-    role: "Hardware & Laptop Technician",
-    createdAt: new Date().toISOString(),
-  },
-];
-
 const getRegisteredAccounts = (): StoredAccount[] => {
   try {
     const raw = localStorage.getItem("darbs_registered_accounts");
-    if (!raw) {
-      localStorage.setItem("darbs_registered_accounts", JSON.stringify(DEFAULT_ACCOUNTS));
-      return DEFAULT_ACCOUNTS;
-    }
+    if (!raw) return [];
     const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed) && parsed.length > 0) {
-      return parsed;
-    }
-    return DEFAULT_ACCOUNTS;
+    return Array.isArray(parsed) ? parsed : [];
   } catch {
-    return DEFAULT_ACCOUNTS;
+    return [];
   }
 };
 

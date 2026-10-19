@@ -153,7 +153,7 @@ export const SmartToolsPanel: React.FC<SmartToolsPanelProps> = ({
             {tools.find((t) => t.id === activeTool)?.title}
           </h2>
           <span className="text-xs text-slate-400">
-            Powered by Gemini 3.6 Flash
+            Powered by Gemini
           </span>
         </div>
 
