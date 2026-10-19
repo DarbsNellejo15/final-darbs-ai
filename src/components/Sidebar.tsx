@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import darbsLogo from "../assets/images/darbs-logo.svg";
 import {
   Laptop,
   Plus,
@@ -68,7 +69,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="flex items-center gap-2.5">
             <div className="relative flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden border border-cyan-400/40 bg-gradient-to-tr from-cyan-600 to-blue-600 text-white shadow-sm">
               <img
-                src="/src/assets/images/img_Logo.png"
+                src={darbsLogo}
                 alt="DARBS Logo"
                 referrerPolicy="no-referrer"
                 className="h-full w-full object-cover"
@@ -105,7 +106,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   />
                 ) : (
                   <img
-                    src="/src/assets/images/img_Logo.png"
+                    src={darbsLogo}
                     alt={currentUser.name}
                     referrerPolicy="no-referrer"
                     className="h-full w-full object-cover"
