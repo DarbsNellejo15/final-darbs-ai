@@ -1,4 +1,4 @@
-// Speech Synthesis Helper for DARBS (Web Speech API + Gemini TTS fallback)
+// Speech Synthesis Helper for DARBS (Web Speech API + Voice Note Support)
 
 class SpeechController {
   private currentUtterance: SpeechSynthesisUtterance | null = null;
