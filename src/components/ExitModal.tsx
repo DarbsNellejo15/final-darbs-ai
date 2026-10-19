@@ -1,5 +1,5 @@
 import React from "react";
-import darbsLogo from "../assets/images/darbs-logo.svg";
+import darbsLogo from "../assets/images/img_Logo.png";
 import { LogOut, RotateCcw, X, ShieldCheck, Laptop } from "lucide-react";
 
 interface ExitModalProps {

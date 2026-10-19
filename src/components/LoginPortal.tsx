@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import darbsLogo from "../assets/images/darbs-logo.svg";
+import darbsLogo from "../assets/images/img_Logo.png";
 import {
   Lock,
   Mail,

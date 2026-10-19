@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import darbsLogo from "./assets/images/darbs-logo.svg";
+import darbsLogo from "./assets/images/img_Logo.png";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 import { ChatMessageItem } from "./components/ChatMessage";
