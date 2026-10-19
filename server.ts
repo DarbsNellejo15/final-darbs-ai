@@ -397,6 +397,10 @@ app.post("/api/smart-tool", async (req, res) => {
   }
 });
 
+app.use("/api", (req, res) => {
+  res.status(404).json({ error: `API endpoint not found: ${req.method} ${req.path}` });
+});
+
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

@@ -288,12 +288,45 @@ export default function App() {
         }),
       });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to get response from DARBS.");
+      const responseBody = await response.text();
+      let payload: unknown;
+      try {
+        payload = JSON.parse(responseBody);
+      } catch {
+        throw new Error(
+          `The chat API returned a non-JSON response (HTTP ${response.status}). The backend may not be running or this host may not route /api/chat to server.ts. Start the app with "npm run dev" or deploy the Node server with the frontend.`
+        );
       }
 
+      if (!payload || typeof payload !== "object") {
+        throw new Error("The chat API returned an invalid response.");
+      }
+
+      const data = payload as Record<string, unknown>;
+
+      if (!response.ok) {
+        throw new Error(
+          typeof data.error === "string"
+            ? data.error
+            : "Failed to get response from DARBS."
+        );
+      }
+
+      if (typeof data.reply !== "string" || !data.reply.trim()) {
+        throw new Error("The chat API response did not include a reply.");
+      }
+
+      const sources = Array.isArray(data.sources)
+        ? data.sources.filter(
+            (source): source is { title: string; url: string } =>
+              !!source &&
+              typeof source === "object" &&
+              "title" in source &&
+              typeof source.title === "string" &&
+              "url" in source &&
+              typeof source.url === "string"
+          )
+        : [];
       const assistantMsgId = `msg-assistant-${Date.now()}`;
       const assistantMsg: ChatMessage = {
         id: assistantMsgId,
@@ -303,7 +336,7 @@ export default function App() {
           hour: "2-digit",
           minute: "2-digit",
         }),
-        sources: data.sources || [],
+        sources,
       };
 
       setSessions((prev) =>

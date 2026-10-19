@@ -20,3 +20,7 @@ View your app in AI Studio: https://ai.studio/apps/400fc1e0-bdbc-4625-a2db-bfe1a
    - Speech uses `gemini-3.8-flash-tts` by default. Override it with `GEMINI_TTS_MODEL` if needed.
 3. Run the app:
    `npm run dev`
+
+The frontend chat and tools require the Node.js API server in `server.ts`. Deploy
+the app with a Node.js host that runs this server; a static-only host cannot serve
+the `/api/*` endpoints.
